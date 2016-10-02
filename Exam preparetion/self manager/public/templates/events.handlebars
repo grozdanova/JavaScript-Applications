@@ -1,0 +1,23 @@
+<h2>Events</h2>
+<a href="#/events/add">Add new event</a>
+{{#if this}}
+<ul>
+    {{#each this}}   
+    <h3><a href="#/events?category={{category}}">{{category}}</a></h3>
+    {{#each events}}
+    <li class="event-item" data-id="{{id}}">
+        <label>
+        {{#if state}}
+        <input class="event-state" type="checkbox" checked />
+        {{else}}
+        <input class="event-state" type="checkbox" />
+        {{/if}}
+        {{title}}
+        </label>
+    </li>
+    {{/each}}
+    {{/each}}
+</ul>
+{{else}}
+<h3>No events</h3>
+{{/if}}
