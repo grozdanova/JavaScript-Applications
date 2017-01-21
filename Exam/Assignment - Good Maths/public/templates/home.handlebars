@@ -1,0 +1,30 @@
+<h1>Materials!</h1>
+<a href="#/materials/add">Add new material</a>
+      <div class="form-group">
+        <label for="tb-search">Search:</label>
+        <input type="password" class="form-control" id="tb-search" />
+      </div>
+<ul class="list list-materials">
+    {{#each this}}
+    <li class="item" data-id="{{id}}">
+        <h3 id="title"> Material: <a href="#/materials/{{id}}">{{title}}</a></h3>
+        <span>Created on: <strong>{{createdOn}}</strong></span>
+
+        <div>
+            {{#if description}}
+            <span>Description: {{description}} .</span>
+            {{else}}
+            <span> No description! </span>
+            {{/if}}
+        </div>
+
+        <p><img src="{{img}}" /></p>
+        {{#each this}}
+        <div>
+            <a href="#/users/{{username}}" > {{username}}</a>
+        </div>
+        {{/each}}
+
+    </li>
+    {{/each}}
+</ul>
